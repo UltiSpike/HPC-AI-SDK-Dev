@@ -43,6 +43,10 @@ Documentation = "https://hpc-ai.com/docs"
 
 [project.optional-dependencies]
 aiohttp = ["aiohttp", "httpx_aiohttp>=0.1.8"]
+hf = [
+    # Required by TrainingClient.get_tokenizer()
+    "transformers>=4.36.0,<5",
+]
 
 [tool.uv]
 managed = true

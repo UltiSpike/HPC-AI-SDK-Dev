@@ -603,7 +603,14 @@ def _to_adam_params(x: types.AdamParams) -> training_optim_step_params.AdamParam
 
 def _get_tokenizer(model_id: types.ModelID, holder: InternalClientHolder) -> PreTrainedTokenizer:
     # call get_info on model_id
-    from transformers.models.auto.tokenization_auto import AutoTokenizer
+    try:
+        from transformers.models.auto.tokenization_auto import AutoTokenizer
+    except ModuleNotFoundError as e:
+        raise ModuleNotFoundError(
+            "Missing optional dependency 'transformers'. "
+            "Install it via `pip install transformers` or install this SDK with extras: "
+            "`pip install -e '.[hf]'`."
+        ) from e
 
     async def _get_info_async():
         with holder.aclient(ClientConnectionPoolType.TRAIN) as client:
