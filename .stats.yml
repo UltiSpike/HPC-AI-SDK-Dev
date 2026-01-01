@@ -1,0 +1,4 @@
+configured_endpoints: 15
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/hpc-ai%2Fhpcai-latest.yml
+openapi_spec_hash: updated-for-hpcai-branding
+config_hash: 2ea282a8a1396267cb7c8a5e28467eb8
