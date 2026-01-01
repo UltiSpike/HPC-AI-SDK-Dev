@@ -607,9 +607,9 @@ def _get_tokenizer(model_id: types.ModelID, holder: InternalClientHolder) -> Pre
         from transformers.models.auto.tokenization_auto import AutoTokenizer
     except ModuleNotFoundError as e:
         raise ModuleNotFoundError(
-            "Missing optional dependency 'transformers'. "
-            "Install it via `pip install transformers` or install this SDK with extras: "
-            "`pip install -e '.[hf]'`."
+            "Missing required dependency 'transformers'. "
+            "Your installation is likely incomplete. Reinstall via `pip install -U transformers` "
+            "or reinstall this SDK."
         ) from e
 
     async def _get_info_async():
