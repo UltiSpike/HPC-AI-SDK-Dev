@@ -48,7 +48,7 @@ from hpcai import ServiceClient
 The SDK uses the `hpcai://` protocol for model and checkpoint paths:
 
 ```python
-model_path = "hpcai://run-123/weights/checkpoint-001"
+model_path = "hpcai://run-123/training/checkpoint-001"
 ```
 
 **Note**: Legacy path protocols are supported during the migration period for backward compatibility.
